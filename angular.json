@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "angular-complete-guide": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-complete-guide"
+    }
+  },
+  "defaultProject": "angular-complete-guide",
+  "cli": {
+    "analytics": "6ce6cb51-69cf-40c4-b943-02f4edeb78b8"
+  }
 }
