@@ -7,17 +7,9 @@ import { stringify } from 'querystring';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular Complete Guide';
-  userName : string = "test";
-  
-  getUserNameState()
-  {
-    let state : boolean = this.userName === "";
-    return state;
-  }
+  selectedNavItemName : string = 'recipe';
 
-  resetUserName()
-  {
-    this.userName = "";
+  onNavItemClicked(navItemName: string) {
+    this.selectedNavItemName = navItemName;
   }
 }

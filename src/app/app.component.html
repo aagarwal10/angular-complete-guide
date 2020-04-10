@@ -1,10 +1,9 @@
-<app-header></app-header>
+<app-header (navItemClick)='onNavItemClicked($event)'></app-header>
 <div class="container">
   <div class="row">
-    <div class="col-sm">
-      <hr>
-      <app-recipe-list></app-recipe-list>
-      <hr>
-      <app-shopping-list></app-shopping-list>
+    <hr>
+    <div class="col-md-12">
+      <app-recipe-list *ngIf="selectedNavItemName === 'recipe'"></app-recipe-list>
+      <app-shopping-list *ngIf="selectedNavItemName === 'shopping'"></app-shopping-list>
+    </div>
   </div>
-</div>
