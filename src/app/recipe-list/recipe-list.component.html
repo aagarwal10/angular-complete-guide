@@ -7,10 +7,16 @@
 <div class="row">
     <div class="col-md-4">
         <app-recipe-item [recipe]="recipeItem" 
-                         *ngFor="let recipeItem of recipes">
+                         *ngFor="let recipeItem of recipes"
+                         (recipeSelected)="onRecipeSelected(recipeItem)">
         </app-recipe-item> 
     </div>
     <div class="col-md-8">
-        <app-recipe-detail></app-recipe-detail>
+        <app-recipe-detail *ngIf="selectedRecipe; else noRecipeTemplate" 
+                            [selectedRecipe]="selectedRecipe">
+        </app-recipe-detail>
+        <ng-template #noRecipeTemplate>
+            <p><strong>No Recipe Selected</strong></p>
+        </ng-template>    
     </div>
 </div>  
