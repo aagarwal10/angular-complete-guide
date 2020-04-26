@@ -2,7 +2,7 @@
     <div class="col-md">
         <app-shopping-edit></app-shopping-edit>
         <hr>
-        <ul class="list-group">
+        <ul class="list-group" *ngIf="ingredients?.length > 0; else noIngredientTemplate">
             <a class="list-group-item" style="cursor: pointer;"
                 *ngFor="let ingredient of ingredients">
                 {{ingredient.name}} ({{ingredient.amount}})
@@ -10,3 +10,7 @@
         </ul>
     </div>
 </div>
+
+<ng-template #noIngredientTemplate>
+    <p><strong>No Ingredient Selected</strong></p>
+</ng-template>
